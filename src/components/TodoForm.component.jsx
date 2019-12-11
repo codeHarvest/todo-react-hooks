@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 
-const TodoForm = ({ addTodo }) =>  {
+const TodoForm = ({ addTodo, show }) =>  {
 
     const [value, setValue]  = useState("");
 
@@ -8,15 +8,19 @@ const TodoForm = ({ addTodo }) =>  {
         e.preventDefault();
         if(!value) return ;
         addTodo(value);
-        setValue("");
+        setValue("");   
     }
 
+
     return (
-        <div className="todo--create">
-            <form className="create--form" onSubmit={handleSubmit}>
+        <div className="container">
+        <div className="todo--c2">
+            <form className={`${show ? 'show' : ''} create--form`} onSubmit={handleSubmit}>
                 <input type="text" className="create--input" value={value} onChange={e =>  setValue(e.target.value)}/>
             </form>
         </div>
+        </div>
+        
     )
 }
 
