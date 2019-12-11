@@ -8,7 +8,7 @@ const TodoForm = ({ addTodo, show }) =>  {
         e.preventDefault();
         if(!value) return ;
         addTodo(value);
-        setValue("");   
+        setValue("");
     }
 
 

@@ -6,10 +6,11 @@ import Button from './components/Button.component';
 
 function App() {
 
+  
   const [todos, setTodos] = useState([
-    {text : 'Learn about hooks', description : 'read react docs section on hooks', isCompleted: false},
-    {text : 'make something using hooks', description :'make a simple todo app using hooks', isCompleted: false},
-    {text : 'submit task', description : 'submit task to get to next round', isCompleted: false}
+    {text : 'morning walk', description : 'walk atleast 2miles at a minimum speed of 10mph', isCompleted: false},
+    {text : 'goto Gym', description :'goto gym follow daily exercise routine', isCompleted: false},
+    {text : 'client meeting', description : 'meet with client and discuss about upcoming events', isCompleted: false}
 ]);
 
   const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ function App() {
   const addTodo = text => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
-  }
+  };
 
   const completeTodo = index => {
     const newTodos = [...todos];
