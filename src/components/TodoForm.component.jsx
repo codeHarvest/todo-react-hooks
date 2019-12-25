@@ -1,6 +1,8 @@
-import React,{ useState } from 'react'
+import React,{ useState, useEffect ,useRef } from 'react'
 
 const TodoForm = ({ addTodo, show }) =>  {
+
+    const inputRef = useRef();
 
     const [value, setValue]  = useState("");
 
@@ -10,13 +12,14 @@ const TodoForm = ({ addTodo, show }) =>  {
         addTodo(value);
         setValue("");
     }
-
+    
+    useEffect(() => inputRef.current && inputRef.current.focus());
 
     return (
         <div className="container">
         <div className="todo--c2">
-            <form className={`${show ? 'show' : ''} create--form`} onSubmit={handleSubmit}>
-                <input type="text" className="create--input" value={value} onChange={e =>  setValue(e.target.value)}/>
+            <form className={`create--form`} onSubmit={handleSubmit}>
+                <input type="text" ref={inputRef} className={`${show ? 'show' : ''} create--input`} value={value} onChange={e =>  setValue(e.target.value)}/>
             </form>
         </div>
         </div>

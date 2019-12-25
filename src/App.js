@@ -20,6 +20,7 @@ function App() {
     setTodos(newTodos);
   };
 
+
   const completeTodo = index => {
     const newTodos = [...todos];
     newTodos[index].isCompleted = true;
@@ -30,7 +31,6 @@ function App() {
     e.preventDefault();
     setShow(!show);
 }
-
 
 
   return (
